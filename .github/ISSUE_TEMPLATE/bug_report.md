@@ -1,6 +1,6 @@
 ---
 name: Bug report
-about: Create a report to help improve the template
+about: Create a report to help improve the bot
 title: ''
 labels: ''
 assignees: ''

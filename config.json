@@ -1,11 +1,10 @@
 {
-  "prefix": "YOUR_BOT_PREFIX_HERE",
-  "token": "YOUR_BOT_TOKEN_HERE",
-  "permissions": "YOUR_BOT_PERMISSIONS_HERE",
-  "application_id": "YOUR_APPLICATION_ID_HERE",
+  "prefix": "",
+  "token": "urmom",
+  "permissions": "8",
+  "application_id": "1120494535424876654",
   "sync_commands_globally": false,
   "owners": [
-    123456789,
-    987654321
+    784776296248901663
   ]
 }

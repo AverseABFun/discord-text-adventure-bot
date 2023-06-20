@@ -1,9 +1,9 @@
 """"
-Copyright © Krypton 2019-2023 - https://github.com/kkrypt0nn (https://krypton.ninja)
+Copyright © AverseABFun/sdft 2023 - https://github.com/AverseABFun-Windows
 Description:
-🐍 A simple template to start to code your own and personalized discord bot in Python programming language.
+A discord text adventure bot
 
-Version: 5.5.0
+Version: 0.0.1
 """
 
 import discord
@@ -17,81 +17,6 @@ from helpers import checks, db_manager
 class Owner(commands.Cog, name="owner"):
     def __init__(self, bot):
         self.bot = bot
-
-    @commands.command(
-        name="sync",
-        description="Synchonizes the slash commands.",
-    )
-    @app_commands.describe(scope="The scope of the sync. Can be `global` or `guild`")
-    @checks.is_owner()
-    async def sync(self, context: Context, scope: str) -> None:
-        """
-        Synchonizes the slash commands.
-
-        :param context: The command context.
-        :param scope: The scope of the sync. Can be `global` or `guild`.
-        """
-
-        if scope == "global":
-            await context.bot.tree.sync()
-            embed = discord.Embed(
-                description="Slash commands have been globally synchronized.",
-                color=0x9C84EF,
-            )
-            await context.send(embed=embed)
-            return
-        elif scope == "guild":
-            context.bot.tree.copy_global_to(guild=context.guild)
-            await context.bot.tree.sync(guild=context.guild)
-            embed = discord.Embed(
-                description="Slash commands have been synchronized in this guild.",
-                color=0x9C84EF,
-            )
-            await context.send(embed=embed)
-            return
-        embed = discord.Embed(
-            description="The scope must be `global` or `guild`.", color=0xE02B2B
-        )
-        await context.send(embed=embed)
-
-    @commands.command(
-        name="unsync",
-        description="Unsynchonizes the slash commands.",
-    )
-    @app_commands.describe(
-        scope="The scope of the sync. Can be `global`, `current_guild` or `guild`"
-    )
-    @checks.is_owner()
-    async def unsync(self, context: Context, scope: str) -> None:
-        """
-        Unsynchonizes the slash commands.
-
-        :param context: The command context.
-        :param scope: The scope of the sync. Can be `global`, `current_guild` or `guild`.
-        """
-
-        if scope == "global":
-            context.bot.tree.clear_commands(guild=None)
-            await context.bot.tree.sync()
-            embed = discord.Embed(
-                description="Slash commands have been globally unsynchronized.",
-                color=0x9C84EF,
-            )
-            await context.send(embed=embed)
-            return
-        elif scope == "guild":
-            context.bot.tree.clear_commands(guild=context.guild)
-            await context.bot.tree.sync(guild=context.guild)
-            embed = discord.Embed(
-                description="Slash commands have been unsynchronized in this guild.",
-                color=0x9C84EF,
-            )
-            await context.send(embed=embed)
-            return
-        embed = discord.Embed(
-            description="The scope must be `global` or `guild`.", color=0xE02B2B
-        )
-        await context.send(embed=embed)
 
     @commands.hybrid_command(
         name="load",
@@ -182,7 +107,7 @@ class Owner(commands.Cog, name="owner"):
 
         :param context: The hybrid command context.
         """
-        embed = discord.Embed(description="Shutting down. Bye! :wave:", color=0x9C84EF)
+        embed = discord.Embed(description="Shutting down. Expect me to be back up in ehh 5 minutes max.", color=0x9C84EF)
         await context.send(embed=embed)
         await self.bot.close()
 
@@ -230,7 +155,7 @@ class Owner(commands.Cog, name="owner"):
         """
         if context.invoked_subcommand is None:
             embed = discord.Embed(
-                description="You need to specify a subcommand.\n\n**Subcommands:**\n`add` - Add a user to the blacklist.\n`remove` - Remove a user from the blacklist.",
+                description="You need to specify a subcommand.\n\n**Subcommands:**\n`add` - Add a user to the blacklist.\n`remove` - Remove a user from the blacklist.\n`show` - Show the users in the blacklist.",
                 color=0xE02B2B,
             )
             await context.send(embed=embed)

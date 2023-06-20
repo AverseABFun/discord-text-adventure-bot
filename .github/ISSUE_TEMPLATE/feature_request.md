@@ -1,6 +1,6 @@
 ---
 name: Feature request
-about: Suggest an idea for the template
+about: Suggest an idea for the bot
 title: ''
 labels: ''
 assignees: ''

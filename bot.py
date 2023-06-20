@@ -1,9 +1,9 @@
 """
-Copyright © Krypton 2019-2023 - https://github.com/kkrypt0nn (https://krypton.ninja)
+Copyright © AverseABFun/sdft 2023 - https://github.com/AverseABFun-Windows
 Description:
-🐍 A simple template to start to code your own and personalized discord bot in Python programming language.
+A discord text adventure bot
 
-Version: 5.5.0
+Version: 0.0.1
 """
 
 import asyncio
@@ -26,6 +26,9 @@ if not os.path.isfile(f"{os.path.realpath(os.path.dirname(__file__))}/config.jso
 else:
     with open(f"{os.path.realpath(os.path.dirname(__file__))}/config.json") as file:
         config = json.load(file)
+
+if config["token"] == "urmom":
+    config["token"] = os.environ["DISCORD_TOKEN"]
 
 """	
 Setup bot intents (events restrictions)
@@ -71,7 +74,7 @@ If you want to use prefix commands, make sure to also enable the intent below in
 # intents.message_content = True
 
 bot = Bot(
-    command_prefix=commands.when_mentioned_or(config["prefix"]),
+    command_prefix=commands.when_mentioned_or(""),
     intents=intents,
     help_command=None,
 )

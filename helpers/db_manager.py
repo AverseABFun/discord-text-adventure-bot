@@ -1,9 +1,9 @@
 """"
-Copyright © Krypton 2019-2023 - https://github.com/kkrypt0nn (https://krypton.ninja)
+Copyright © AverseABFun/sdft 2023 - https://github.com/AverseABFun-Windows
 Description:
-🐍 A simple template to start to code your own and personalized discord bot in Python programming language.
+A discord text adventure bot
 
-Version: 5.5.0
+Version: 0.0.1
 """
 
 import os
