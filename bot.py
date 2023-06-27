@@ -71,10 +71,10 @@ It is recommended to use slash commands and therefore not use prefix commands.
 
 If you want to use prefix commands, make sure to also enable the intent below in the Discord developer portal.
 """
-# intents.message_content = True
+intents.message_content = True
 
 bot = Bot(
-    command_prefix=commands.when_mentioned_or(""),
+    command_prefix=commands.when_mentioned_or(";"),
     intents=intents,
     help_command=None,
 )
@@ -174,7 +174,7 @@ async def status_task() -> None:
     """
     Setup the game status task of the bot.
     """
-    statuses = ["with you!", "with Krypton!", "with humans!"]
+    statuses = ["with you!", "with someone else!", "with humans!", "inside your mom!"]
     await bot.change_presence(activity=discord.Game(random.choice(statuses)))
 
 
@@ -185,9 +185,10 @@ async def on_message(message: discord.Message) -> None:
 
     :param message: The message that was sent.
     """
-    if message.author == bot.user or message.author.bot:
+    if message.author == bot.user or message.author.bot or message.channel.type != discord.ChannelType.text or not message.channel.category:
         return
-    await bot.process_commands(message)
+    context = await bot.get_context(message)
+    await bot.invoke(context)
 
 
 @bot.event
@@ -284,6 +285,18 @@ async def on_command_error(context: Context, error) -> None:
             color=0xE02B2B,
         )
         await context.send(embed=embed)
+    elif isinstance(error, exceptions.UserExecutingInDMs):
+        embed = discord.Embed(
+            description="This command cannot be run in DMs!",
+            color=0xE02B2B
+        )
+        await context.send(embed=embed)
+    elif isinstance(error, exceptions.IncorrectChannel):
+        embed = discord.Embed(
+            description="This command cannot be run in this channel!",
+            color=0xE02B2B
+        )
+        await context.send(embed=embed)
     else:
         raise error
 
@@ -293,7 +306,7 @@ async def load_cogs() -> None:
     The code in this function is executed whenever the bot will start.
     """
     for file in os.listdir(f"{os.path.realpath(os.path.dirname(__file__))}/cogs"):
-        if file.endswith(".py"):
+        if file.endswith(".py") and file != "template.py":
             extension = file[:-3]
             try:
                 await bot.load_extension(f"cogs.{extension}")

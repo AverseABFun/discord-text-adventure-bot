@@ -46,3 +46,27 @@ def not_blacklisted() -> Callable[[T], T]:
         return True
 
     return commands.check(predicate)
+
+def not_dms() -> Callable[[T], T]:
+    """
+    This is a custom check to see if the user executing the command is executing it in the DMs.
+    """
+
+    async def predicate(context: commands.Context) -> bool:
+        if not context.guild:
+            raise UserExecutingInDMs
+        return True
+
+    return commands.check(predicate)
+
+def in_channel(channel: str) -> Callable[[T], T]:
+    """
+    This is a custom check to see if the user executing the command is executing it in the DMs.
+    """
+
+    async def predicate(context: commands.Context) -> bool:
+        if context.channel.name != channel:
+            raise IncorrectChannel
+        return True
+
+    return commands.check(predicate)

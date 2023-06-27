@@ -168,7 +168,7 @@ async def get_state(user_id: int) -> list:
     async with aiosqlite.connect(DATABASE_PATH) as db:
         rows = await db.execute(
             "SELECT user_id, location, inventory_json, strftime('%s', updated_time) FROM states WHERE user_id=?",
-            (user_id)
+            (user_id,)
         )
         async with rows as cursor:
             result = await cursor.fetchall()
@@ -193,6 +193,27 @@ async def update_state(user_id: int, location: str, inventory_json: str) -> bool
                 location,
                 inventory_json,
                 user_id
+            ),
+        )
+        await db.commit()
+        return True
+
+async def create_state(user_id: int, location: str, inventory_json: str) -> bool:
+    """
+    This function will update a game state in the database.
+
+    :param user_id: The ID of the user that should be changed.
+    :param location: The location of the user.
+    :param inventory_json: A JSON version of the inventory.
+    :return: True if it succeeded, error if it didn't.
+    """
+    async with aiosqlite.connect(DATABASE_PATH) as db:
+        await db.execute(
+            "INSERT INTO states(user_id, location, inventory_json) VALUES (?, ?, ?)",
+            (
+                user_id,
+                location,
+                inventory_json
             ),
         )
         await db.commit()

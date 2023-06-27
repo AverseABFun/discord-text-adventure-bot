@@ -27,3 +27,22 @@ class UserNotOwner(commands.CheckFailure):
     def __init__(self, message="User is not an owner of the bot!"):
         self.message = message
         super().__init__(self.message)
+
+class UserExecutingInDMs(commands.CheckFailure):
+    """
+    Thrown when a user is attempting something, but is not executing it in a guild.
+    """
+
+    def __init__(self, message="User cannot execute command in DMs!"):
+        self.message = message
+        super().__init__(self.message)
+
+class IncorrectChannel(commands.CheckFailure):
+    """
+    Thrown when a user is attempting something, but is not executing it in the correct channel.
+    """
+
+    def __init__(self, message="User cannot execute command in channel!"):
+        self.message = message
+        super().__init__(self.message)
+        
