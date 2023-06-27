@@ -1,8 +1,1 @@
-{
-    "name":"unfinished",
-    "description": "an unfinished room",
-    "color":"0xE02B2B",
-    "exits": {
-        "north": "start"
-    }
-}
+{"name": "Almice gates", "description": "The gates of almice. They are closed tight.", "color": "0xE02B2B", "exits": {"north": "start"}, "players": []}

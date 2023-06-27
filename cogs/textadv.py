@@ -30,7 +30,7 @@ class TextAdventure(commands.Cog, name="textadv"):
     )
     @checks.not_blacklisted()
     @checks.not_dms()
-    @checks.in_channel("start")
+    @checks.in_channel("level-1")
     async def start(self, context: Context):
         """
         This is the command that starts your adventure yaaay
@@ -56,6 +56,7 @@ class TextAdventure(commands.Cog, name="textadv"):
             )
             await context.send(embed=embed)
             return
+        data.mark_player_in_room(context.author.id, state[1])
         embed = discord.Embed(
             title=room["name"],
             description=room["description"],
@@ -86,6 +87,7 @@ class TextAdventure(commands.Cog, name="textadv"):
             )
             await context.send(embed=embed)
             return
+        data.mark_player_in_room(context.author.id, state[1])
         embed = discord.Embed(
             title=room["name"],
             description=room["description"],
@@ -126,7 +128,171 @@ class TextAdventure(commands.Cog, name="textadv"):
             await context.send(embed=embed)
             return
         await db_manager.update_state(context.author.id, room, state[2])
+        data.mark_player_in_room(context.author.id, room)
+        data.mark_player_not_in_room(context.author.id, state[1])
 
+        state = await get_state(context)
+        try:
+            room = data.get_room_data(state[1])
+        except ValueError:
+            embed = discord.Embed(
+                title="Error!",
+                description="You have somehow landed in an invalid location. Please report this to @AverseABFun.",
+                color=0xE02B2B
+            )
+            await context.send(embed=embed)
+            return
+        embed = discord.Embed(
+            title=room["name"],
+            description=room["description"],
+            color=int(room["color"], base=16)
+        )
+        await context.send(embed=embed)
+
+    @commands.hybrid_command(
+        name="south",
+        description="Go south",
+    )
+    @checks.not_blacklisted()
+    @checks.not_dms()
+    async def south(self, context: Context):
+        """
+        This is a command that allows you to go south
+
+        :param context: The application command context.
+        """
+        state = await get_state(context)
+        try:
+            room = data.get_room_data(state[1])
+        except ValueError:
+            embed = discord.Embed(
+                title="Error!",
+                description="You have somehow landed in an invalid location. Please report this to @AverseABFun.",
+                color=0xE02B2B
+            )
+            await context.send(embed=embed)
+            return
+        try:
+            room = room["exits"]["south"]
+        except KeyError:
+            embed = discord.Embed(
+                description="You can't go that way!",
+                color=0xE02B2B
+            )
+            await context.send(embed=embed)
+            return
+        await db_manager.update_state(context.author.id, room, state[2])
+        data.mark_player_in_room(context.author.id, room)
+        data.mark_player_not_in_room(context.author.id, state[1])
+
+        state = await get_state(context)
+        try:
+            room = data.get_room_data(state[1])
+        except ValueError:
+            embed = discord.Embed(
+                title="Error!",
+                description="You have somehow landed in an invalid location. Please report this to @AverseABFun.",
+                color=0xE02B2B
+            )
+            await context.send(embed=embed)
+            return
+        embed = discord.Embed(
+            title=room["name"],
+            description=room["description"],
+            color=int(room["color"], base=16)
+        )
+        await context.send(embed=embed)
+
+    @commands.hybrid_command(
+        name="east",
+        description="Go east",
+    )
+    @checks.not_blacklisted()
+    @checks.not_dms()
+    async def east(self, context: Context):
+        """
+        This is a command that allows you to go east
+
+        :param context: The application command context.
+        """
+        state = await get_state(context)
+        try:
+            room = data.get_room_data(state[1])
+        except ValueError:
+            embed = discord.Embed(
+                title="Error!",
+                description="You have somehow landed in an invalid location. Please report this to @AverseABFun.",
+                color=0xE02B2B
+            )
+            await context.send(embed=embed)
+            return
+        try:
+            room = room["exits"]["east"]
+        except KeyError:
+            embed = discord.Embed(
+                description="You can't go that way!",
+                color=0xE02B2B
+            )
+            await context.send(embed=embed)
+            return
+        await db_manager.update_state(context.author.id, room, state[2])
+        data.mark_player_in_room(context.author.id, room)
+        data.mark_player_not_in_room(context.author.id, state[1])
+
+        state = await get_state(context)
+        try:
+            room = data.get_room_data(state[1])
+        except ValueError:
+            embed = discord.Embed(
+                title="Error!",
+                description="You have somehow landed in an invalid location. Please report this to @AverseABFun.",
+                color=0xE02B2B
+            )
+            await context.send(embed=embed)
+            return
+        embed = discord.Embed(
+            title=room["name"],
+            description=room["description"],
+            color=int(room["color"], base=16)
+        )
+        await context.send(embed=embed)
+
+    @commands.hybrid_command(
+        name="west",
+        description="Go west",
+    )
+    @checks.not_blacklisted()
+    @checks.not_dms()
+    async def west(self, context: Context):
+        """
+        This is a command that allows you to go west
+
+        :param context: The application command context.
+        """
+        state = await get_state(context)
+        try:
+            room = data.get_room_data(state[1])
+        except ValueError:
+            embed = discord.Embed(
+                title="Error!",
+                description="You have somehow landed in an invalid location. Please report this to @AverseABFun.",
+                color=0xE02B2B
+            )
+            await context.send(embed=embed)
+            return
+        try:
+            room = room["exits"]["west"]
+        except KeyError:
+            embed = discord.Embed(
+                description="You can't go that way!",
+                color=0xE02B2B
+            )
+            await context.send(embed=embed)
+            return
+        await db_manager.update_state(context.author.id, room, state[2])
+        data.mark_player_in_room(context.author.id, room)
+        data.mark_player_not_in_room(context.author.id, state[1])
+        
         state = await get_state(context)
         try:
             room = data.get_room_data(state[1])

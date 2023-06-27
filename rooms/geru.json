@@ -1,8 +1,1 @@
-{
-    "name":"unfinished",
-    "description": "an unfinished room",
-    "color":"0xE02B2B",
-    "exits": {
-        "south": "start"
-    }
-}
+{"name": "Geru gates", "description": "The gates leading to Geru. They are wide open.", "color": "0xE02B2B", "exits": {"north": "geru-center", "south": "start"}, "players": []}
