@@ -1,0 +1,1 @@
+{"name": "The tavern", "description": "The tavern of Geru. It is currently closed, but there are some mugs laying around. The mugs are sticky with beer and you don't want to touch them.", "color": "0xE0E0E0", "exits": {"east": "geru-center"}, "players": []}
