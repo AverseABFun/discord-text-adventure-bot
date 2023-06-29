@@ -2,6 +2,6 @@
     "name": "Mace",
     "type": "weapon",
     "attack": 2.5,
-    "defense": 0,
+    "defense": 1,
     "reload": 0
 }

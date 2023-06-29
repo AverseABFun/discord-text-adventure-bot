@@ -1,1 +1,1 @@
-{"name": "The club hub", "description": "The weapons shop of Geru. It appears to have been mostly destroyed, but you can see a mace sticking out of the wreakage.", "color": "0xE0E0E0", "exits": {"north": "geru-alley-1"}, "players": [784776296248901663], "items": {"mace": "mace"}}
+{"name": "The club hub", "description": "The weapons shop of Geru. It appears to have been mostly destroyed, but you can see a mace sticking out of the wreakage.", "color": "0xE0E0E0", "exits": {"north": "geru-alley-1"}, "players": [669384112275980298], "items": {"mace": "mace"}}

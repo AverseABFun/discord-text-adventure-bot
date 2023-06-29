@@ -29,6 +29,7 @@ class General(commands.Cog, name="general"):
             title="Help", description="List of available commands:", color=0x9C84EF
         )
         for i in self.bot.cogs:
+            if i.lower() not in ['general','textadv']: continue
             cog = self.bot.get_cog(i.lower())
             commands = cog.get_commands()
             data = []

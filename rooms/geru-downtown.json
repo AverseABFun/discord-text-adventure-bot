@@ -1,1 +1,0 @@
-{"name": "Geru city center", "description": "The city center of Geru. There are stores or alleyways to all directions, except north and south, which lead to downtown or the gates respectively.", "color": "0xE0E0E0", "exits": {"north":"geru-downtown", "south": "geru", "east":"geru-alley-1", "west":"geru-store-1"}, "players": []}
