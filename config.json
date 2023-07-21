@@ -4,7 +4,5 @@
   "permissions": "8",
   "application_id": "1120494535424876654",
   "sync_commands_globally": false,
-  "owners": [
-    784776296248901663
-  ]
+  "owners": [784776296248901663]
 }

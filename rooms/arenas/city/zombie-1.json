@@ -1,1 +1,7 @@
-{"name": "A weird subterranean arena", "description": "A arena you got sucked into. You can't exit, only fight the zombie to the death.", "color": "0x9B7653", "exits": {}, "players": [784776296248901663]}
+{
+  "name": "A weird subterranean arena",
+  "description": "A arena you got sucked into. You can't exit, only fight the zombie to the death.",
+  "color": "0x9B7653",
+  "exits": {},
+  "players": [784776296248901663]
+}

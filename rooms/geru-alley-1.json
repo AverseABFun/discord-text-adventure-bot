@@ -1,1 +1,11 @@
-{"name": "Geru alley", "description": "A alley with some shops.", "color": "0xE0E0E0", "exits": {"south": "geru-store-3", "west": "geru-center", "north": "geru-store-2"}, "players": []}
+{
+  "name": "Geru alley",
+  "description": "A alley with some shops.",
+  "color": "0xE0E0E0",
+  "exits": {
+    "south": "geru-store-3",
+    "west": "geru-center",
+    "north": "geru-store-2"
+  },
+  "players": [784776296248901663]
+}

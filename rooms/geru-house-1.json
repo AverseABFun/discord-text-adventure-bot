@@ -1,1 +1,8 @@
-{"name": "A House", "description": "A house in Geru. It has been completely destroyed, with only half of a parlor visible. You don't want to go there as it doesn't look structually sound. You do see some kind of undead human though.", "color": "0xE0E0E0", "exits": {"west": "geru-resdis"}, "players": [], "enemies": ["zombie-1"]}
+{
+  "name": "A House",
+  "description": "A house in Geru. It has been completely destroyed, with only half of a parlor visible. You don't want to go there as it doesn't look structually sound. You do see some kind of undead human though.",
+  "color": "0xE0E0E0",
+  "exits": { "west": "geru-resdis" },
+  "players": [784776296248901663],
+  "enemies": ["zombie-1"]
+}

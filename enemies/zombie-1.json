@@ -1,14 +1,23 @@
 {
-    "type": "undead",
-    "name": "the Zombie",
-    "arena": "arenas/city/zombie-1",
-    "health": 6,
-    "attack": 0.4,
-    "defense": -0.6,
-    "text": {
-        "defend": ["The zombie raises it's arm to try to block you but just ends up losing it's hand. It puts the hand back on but the hand will never be the same.", "The zombie tries to get your sympathy by attempting to cry but just starts wailing and loses an arm from screaming. It uses it's hand as a weapon."],
-        "attack": ["It attacks by running at you and trying to claw you. It manages to trip and knock a brick into your toe, stubbing it.", "It throws a brick at you and manages to hit your pinky."],
-        "die": ["You finally put it out of it's misery and it is grateful.", "You kill it and it is sad it couldn't kill you."]
-    },
-    "loot": []
+  "type": "undead",
+  "name": "the Zombie",
+  "arena": "arenas/city/zombie-1",
+  "health": 6,
+  "attack": 0.4,
+  "defense": -0.6,
+  "text": {
+    "defend": [
+      "The zombie raises it's arm to try to block you but just ends up losing it's hand. It puts the hand back on but the hand will never be the same.",
+      "The zombie tries to get your sympathy by attempting to cry but just starts wailing and loses an arm from screaming. It uses it's hand as a weapon."
+    ],
+    "attack": [
+      "It attacks by running at you and trying to claw you. It manages to trip and knock a brick into your toe, stubbing it.",
+      "It throws a brick at you and manages to hit your pinky."
+    ],
+    "die": [
+      "You finally put it out of it's misery and it is grateful.",
+      "You kill it and it is sad it couldn't kill you."
+    ]
+  },
+  "loot": []
 }

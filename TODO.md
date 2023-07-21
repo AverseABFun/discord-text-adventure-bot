@@ -2,8 +2,8 @@
 
 ## Version 5.6
 
-* [ ] make the game
+- [ ] make the game
 
 ## Done
 
-* [X] nothing
+- [x] nothing

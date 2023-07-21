@@ -1,0 +1,8 @@
+{
+  "name": "The Geru Castle",
+  "description": "The castle of Geru. It seems to have recieved the worst treatment and is in shambles. There is the remains of the knight zombie here, but you can now enter the rest of the castle to the north.",
+  "color": "0xE0E0E0",
+  "exits": { "south": "geru-resdis" },
+  "players": [],
+  "enemies": []
+}

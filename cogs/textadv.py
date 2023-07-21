@@ -403,7 +403,8 @@ class TextAdventure(commands.Cog, name="textadv"):
         if inv["fighting"] != "":
             state = list(state)
             enemy = json.loads(inv["enemy_data"])
-            text = enemy["text"]
+            text = dict(**enemy["text"])
+            print(text)
             text['defend'] = random.choice(text['defend'])
             text['attack'] = random.choice(text['attack'])
             text['die'] = random.choice(text['die'])
@@ -412,10 +413,13 @@ class TextAdventure(commands.Cog, name="textadv"):
             inv["enemy_data"] = json.dumps(enemy)
             if enemy['health'] <= 0:
                 show_text += f"\n\n{text['die']}"
+                print(show_text)
                 inv["enemy_data"] = ""
                 inv["fighting"] = ""
                 inv["health"] = 20
                 state[1] = inv["old_attack_room"]
+                #if data.get_room_data(state[1]):
+                    
                 inv["old_attack_room"] = ""
                 inv["cleared_rooms"].append(state[1])
                 try:

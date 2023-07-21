@@ -1,1 +1,7 @@
-{"name": "Room of Trials", "description": "A mysterious voice whispers... \"You are not ready yet, young one.\"", "color": "0xF9A602", "exits": {"west": "start"}, "players": []}
+{
+  "name": "Room of Trials",
+  "description": "A mysterious voice whispers... \"You are not ready yet, young one.\"",
+  "color": "0xF9A602",
+  "exits": { "west": "start" },
+  "players": []
+}

@@ -1,0 +1,23 @@
+{
+  "type": "undead",
+  "name": "the Knight Zombie",
+  "arena": "arenas/castle/zombie-2",
+  "health": 18,
+  "attack": 1.2,
+  "defense": 1.5,
+  "text": {
+    "defend": [
+      "The Knight Zombie raises it's shield and only gets slight shook. The shock does cause some of it's fingers to fall off so it puts them back on, but they don't work as well any more.",
+      "The Knight Zombie tries to parry your attack but mostly fails and trips and falls. You whack it with your mace and it gets back up."
+    ],
+    "attack": [
+      "It attacks by slashing it's sword at you. You manage to parry the attack and come off mostly unscathed.",
+      "It tries to use it's shield as a battering ram and manages to get your arm, partially crushing it. It mildly hurts but you come away mostly fine."
+    ],
+    "die": [
+      "You finally kill it and as it's dying for the second time that week, it says \"I...Hate...Mondays.....\" and dies.",
+      "You kill it and it topples over and says \"Not the king! Don't make the king suffer like this...\" and dies, letting it's soul be released."
+    ]
+  },
+  "loot": ["sword"]
+}

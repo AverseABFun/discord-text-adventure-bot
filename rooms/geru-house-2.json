@@ -1,1 +1,8 @@
-{"name": "A House", "description": "A house in Geru. It has been completely destroyed, with nothing visible except for a zombie.", "color": "0xE0E0E0", "exits": {"east": "geru-resdis"}, "players": [], "enemies": ["zombie-1"]}
+{
+  "name": "A House",
+  "description": "A house in Geru. It has been completely destroyed, with nothing visible except for a zombie.",
+  "color": "0xE0E0E0",
+  "exits": { "east": "geru-resdis" },
+  "players": [],
+  "enemies": ["zombie-1"]
+}
