@@ -156,27 +156,27 @@ tests-no-zope = ["cloudpickle", "hypothesis", "mypy (>=1.1.1)", "pympler", "pyte
 
 [[package]]
 name = "discord"
-version = "2.3.0"
+version = "2.3.2"
 description = "A mirror package for discord.py. Please install that instead."
 optional = false
 python-versions = "*"
 files = [
-    {file = "discord-2.3.0-py3-none-any.whl", hash = "sha256:c48db74a1eb0dd9ffc6cd7fe25a90bbc8f0ad8bde8211d898dc89c6d88d08836"},
-    {file = "discord-2.3.0.tar.gz", hash = "sha256:e20b9af97a91d321d09aad7bbeb45ad6c50a2784bdd739d1d7be480baf96b905"},
+    {file = "discord-2.3.2-py3-none-any.whl", hash = "sha256:d7959418799dd3b1e896685812d880169c193468b061b3431fa2a4664febd3da"},
+    {file = "discord-2.3.2.tar.gz", hash = "sha256:cc1ee2dbe6df218ca51519af355b97e87309f8230f58c7f34885feb8e8a76145"},
 ]
 
 [package.dependencies]
-"discord.py" = ">=2.3.0"
+"discord.py" = ">=2.3.2"
 
 [[package]]
-name = "discord.py"
-version = "2.3.0"
+name = "discord-py"
+version = "2.3.2"
 description = "A Python wrapper for the Discord API"
 optional = false
 python-versions = ">=3.8.0"
 files = [
-    {file = "discord.py-2.3.0-py3-none-any.whl", hash = "sha256:3e9498967822ad4499f8f72deb9173f942d9827d92b6e4e4e7732d24f78f300c"},
-    {file = "discord.py-2.3.0.tar.gz", hash = "sha256:c71066a30f037d069218e59092505c3e8945fd175e396a80748056d989756806"},
+    {file = "discord.py-2.3.2-py3-none-any.whl", hash = "sha256:9da4679fc3cb10c64b388284700dc998663e0e57328283bbfcfc2525ec5960a6"},
+    {file = "discord.py-2.3.2.tar.gz", hash = "sha256:4560f70f2eddba7e83370ecebd237ac09fbb4980dc66507482b0c0e5b8f76b9c"},
 ]
 
 [package.dependencies]
@@ -455,4 +455,4 @@ multidict = ">=4.0"
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "2e90c469d63586e6c22643f06145a624620d29eb68a9390b2ecc38d8bf343557"
+content-hash = "902cbc2d12c197d45eff2e99d6149b0f1ee6366a097090af33124afaa3584782"
