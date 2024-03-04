@@ -12,6 +12,9 @@ import os
 import platform
 import random
 import sys
+from dotenv import load_dotenv
+
+load_dotenv()
 
 import aiosqlite
 import discord
@@ -27,7 +30,7 @@ else:
         config = json.load(file)
 
 if config["token"] == "urmom":
-    config["token"] = os.environ["DISCORD_TOKEN"]
+    config["token"] = os.getenv("DISCORD_TOKEN")
 
 """	
 Setup bot intents (events restrictions)
