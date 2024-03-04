@@ -417,10 +417,10 @@ class TextAdventure(commands.Cog, name="textadv"):
                 inv["enemy_data"] = ""
                 inv["fighting"] = ""
                 inv["health"] = 20
-                if data.get_room_data(state[1])["return"] != "":
-                    state[1] = data.get_room_data(state[1])["return"]
+                if room["return"] != "":
+                    state[1] = room["return"]
                 else:
-                    state[1] =  inv["old_attack_room"]
+                    state[1] = inv["old_attack_room"]
                 #if data.get_room_data(state[1]):
                     
                 inv["old_attack_room"] = ""
