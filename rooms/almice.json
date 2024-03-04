@@ -1,7 +1,1 @@
-{
-  "name": "Almice gates",
-  "description": "The gates of almice. They are closed tight.",
-  "color": "0xE02B2B",
-  "exits": { "north": "start" },
-  "players": []
-}
+{"name": "Almice gates", "description": "The gates of almice. They are closed tight.", "color": "0xE02B2B", "exits": {"north": "start"}, "players": []}

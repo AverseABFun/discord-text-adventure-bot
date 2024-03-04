@@ -319,7 +319,7 @@ class TextAdventure(commands.Cog, name="textadv"):
     )
     @checks.not_blacklisted()
     @checks.not_dms()
-    async def get(self, context: Context, arg: str):
+    async def get(self, context: Context, item: str):
         """
         This is a command that allows you to get an item.
 
@@ -347,7 +347,7 @@ class TextAdventure(commands.Cog, name="textadv"):
             await context.send(embed=embed)
             return
         try:
-            item = items[arg]
+            item = items[item]
         except KeyError:
             embed = discord.Embed(
                 title="Error!",
