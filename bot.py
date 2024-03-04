@@ -1,12 +1,10 @@
 """
-Copyright © AverseABFun/sdft 2023 - https://github.com/AverseABFun-Windows
+Copyright © AverseABFun/sdft 2023 - https://github.com/AverseABFun
 Description:
 A discord text adventure bot
 
 Version: 0.0.1
 """
-# you and what license
-# me and the apache 2.0 license
 import asyncio
 import json
 import logging

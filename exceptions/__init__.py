@@ -1,5 +1,5 @@
 """
-Copyright © AverseABFun/sdft 2023 - https://github.com/AverseABFun-Windows
+Copyright © AverseABFun/sdft 2023 - https://github.com/AverseABFun
 Description:
 A discord text adventure bot
 
