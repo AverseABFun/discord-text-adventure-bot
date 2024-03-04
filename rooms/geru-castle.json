@@ -1,9 +1,1 @@
-{
-  "name": "The Geru Castle",
-  "description": "The castle of Geru. It seems to have recieved the worst treatment and is in shambles. There is a zombie clad in armor here and also has a sword. It is blocking the entrance to the rest of the castle.",
-  "color": "0xE0E0E0",
-  "exits": { "south": "geru-resdis" },
-  "players": [],
-  "enemies": ["zombie-2"],
-  "return": "geru-castle-open"
-}
+{"name": "The Geru Castle", "description": "The castle of Geru. It seems to have recieved the worst treatment and is in shambles. There is a zombie clad in armor here and also has a sword. It is blocking the entrance to the rest of the castle.", "color": "0xE0E0E0", "exits": {"south": "geru-resdis"}, "players": [784776296248901663], "enemies": ["zombie-2"], "return": "geru-castle-open"}

@@ -409,7 +409,7 @@ class TextAdventure(commands.Cog, name="textadv"):
             text['attack'] = random.choice(text['attack'])
             text['die'] = random.choice(text['die'])
             show_text = f"You attack {enemy['name']}.\n{text['defend']}"
-            enemy['health'] -= inv['attack']-enemy['defense']
+            enemy['health'] -= inv['attack']/enemy['defense']
             inv["enemy_data"] = json.dumps(enemy)
             if enemy['health'] <= 0:
                 show_text += f"\n\n{text['die']}"
@@ -417,7 +417,7 @@ class TextAdventure(commands.Cog, name="textadv"):
                 inv["enemy_data"] = ""
                 inv["fighting"] = ""
                 inv["health"] = 20
-                state[1] = inv["old_attack_room"]
+                state[1] = data.get_room_data(state[1])["return"] or inv["old_attack_room"]
                 #if data.get_room_data(state[1]):
                     
                 inv["old_attack_room"] = ""
@@ -446,7 +446,6 @@ class TextAdventure(commands.Cog, name="textadv"):
                     return
                 if item["type"] == "weapon":
                     inventory = inv
-                    inventory = json.loads(inventory)
                     if item["attack"]>=inventory["attack"]:
                         inventory["attack"] = item["attack"]
                         inventory["defense"] = item["defense"]
@@ -460,7 +459,7 @@ class TextAdventure(commands.Cog, name="textadv"):
                         return
                     else:
                         embed = discord.Embed(
-                            description=f"{show_text}\n\nYou have a better loot weapon.",
+                            description=f"{show_text}\n\nYou already have a better loot weapon.",
                             color=0xE02B2B
                         )
                         await context.send(embed=embed)

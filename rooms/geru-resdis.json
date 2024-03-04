@@ -1,12 +1,1 @@
-{
-  "name": "Geru Residential District",
-  "description": "The residential district of Geru. To the north is the Geru castle, to the south is the Geru city center, and to the other sides are houses.",
-  "color": "0xE0E0E0",
-  "exits": {
-    "south": "geru-center",
-    "north": "geru-castle",
-    "east": "geru-house-1",
-    "west": "geru-house-2"
-  },
-  "players": []
-}
+{"name": "Geru Residential District", "description": "The residential district of Geru. To the north is the Geru castle, to the south is the Geru city center, and to the other sides are houses.", "color": "0xE0E0E0", "exits": {"south": "geru-center", "north": "geru-castle", "east": "geru-house-1", "west": "geru-house-2"}, "players": []}
