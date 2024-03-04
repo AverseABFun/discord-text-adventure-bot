@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "repl_nix_discord-text-adventure-bot"
+name = "discord-text-adventure-bot"
 version = "0.1.0"
 description = ""
 authors = ["Your Name <you@example.com>"]
